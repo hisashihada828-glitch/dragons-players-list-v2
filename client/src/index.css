@@ -41,76 +41,98 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 }
-
 :root {
-  --primary: #C41E3A;
+  --primary: #0046AD;                /* ドラゴンズブルー */
   --primary-foreground: #FFFFFF;
-  --sidebar-primary: #C41E3A;
+
+  --sidebar-primary: #002B5C;        /* ネイビー */
   --sidebar-primary-foreground: #FFFFFF;
-  --chart-1: #C41E3A;
-  --chart-2: #E63946;
-  --chart-3: #A01829;
-  --chart-4: #8B1428;
-  --chart-5: #6B0F1F;
+
+  --chart-1: #0046AD;
+  --chart-2: #1E63D6;
+  --chart-3: #002B5C;
+  --chart-4: #003C8F;
+  --chart-5: #0057D9;
+
   --radius: 0.5rem;
+
   --background: #FFFFFF;
   --foreground: #1A1A1A;
-  --card: #F8F9FA;
+
+  --card: #F5F8FF;                   /* うすいブルー背景 */
   --card-foreground: #1A1A1A;
+
   --popover: #FFFFFF;
   --popover-foreground: #1A1A1A;
-  --secondary: #1A1A1A;
+
+  --secondary: #002B5C;
   --secondary-foreground: #FFFFFF;
-  --muted: #E5E5E5;
-  --muted-foreground: #666666;
-  --accent: #C41E3A;
+
+  --muted: #E8EEF8;
+  --muted-foreground: #555555;
+
+  --accent: #0046AD;
   --accent-foreground: #FFFFFF;
-  --destructive: #EF4444;
+
+  --destructive: #C41E3A;            /* 赤は残す（警告用） */
   --destructive-foreground: #FFFFFF;
-  --border: #E0E0E0;
+
+  --border: #D6E2F5;
   --input: #FFFFFF;
-  --ring: #C41E3A;
-  --sidebar: #1A1A1A;
+  --ring: #0046AD;
+
+  --sidebar: #002B5C;
   --sidebar-foreground: #FFFFFF;
-  --sidebar-accent: #C41E3A;
+  --sidebar-accent: #0046AD;
   --sidebar-accent-foreground: #FFFFFF;
-  --sidebar-border: #2A2A2A;
-  --sidebar-ring: #C41E3A;
+  --sidebar-border: #001F40;
+  --sidebar-ring: #0046AD;
 }
 
 .dark {
-  --primary: #FF4757;
+  --primary: #1E63D6;                /* 明るめブルー */
   --primary-foreground: #FFFFFF;
-  --sidebar-primary: #FF4757;
+
+  --sidebar-primary: #0046AD;
   --sidebar-primary-foreground: #FFFFFF;
-  --background: #0F1419;
-  --foreground: #F5F5F5;
-  --card: #1A2332;
-  --card-foreground: #F5F5F5;
-  --popover: #1A2332;
-  --popover-foreground: #F5F5F5;
-  --secondary: #2A3A4A;
+
+  --background: #0B1A2A;             /* 濃いネイビー背景 */
+  --foreground: #F5F7FA;
+
+  --card: #12273D;
+  --card-foreground: #F5F7FA;
+
+  --popover: #12273D;
+  --popover-foreground: #F5F7FA;
+
+  --secondary: #002B5C;
   --secondary-foreground: #FFFFFF;
-  --muted: #3A4A5A;
-  --muted-foreground: #CCCCCC;
-  --accent: #FF4757;
+
+  --muted: #1C324A;
+  --muted-foreground: #B8C7DA;
+
+  --accent: #1E63D6;
   --accent-foreground: #FFFFFF;
-  --destructive: #FF6B6B;
+
+  --destructive: #C41E3A;           /* 赤はそのまま */
   --destructive-foreground: #FFFFFF;
-  --border: #2A3A4A;
-  --input: #1A2332;
-  --ring: #FF4757;
-  --chart-1: #FF4757;
-  --chart-2: #FF6B7A;
-  --chart-3: #E63946;
-  --chart-4: #C41E3A;
-  --chart-5: #A01829;
-  --sidebar: #0F1419;
-  --sidebar-foreground: #F5F5F5;
-  --sidebar-accent: #FF4757;
+
+  --border: #1E2F45;
+  --input: #12273D;
+  --ring: #1E63D6;
+
+  --chart-1: #1E63D6;
+  --chart-2: #0046AD;
+  --chart-3: #2F80ED;
+  --chart-4: #003C8F;
+  --chart-5: #5AA0FF;
+
+  --sidebar: #0B1A2A;
+  --sidebar-foreground: #F5F7FA;
+  --sidebar-accent: #1E63D6;
   --sidebar-accent-foreground: #FFFFFF;
-  --sidebar-border: #1E2A3A;
-  --sidebar-ring: #FF4757;
+  --sidebar-border: #16283C;
+  --sidebar-ring: #1E63D6;
 }
 
 @layer base {
