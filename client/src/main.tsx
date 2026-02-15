@@ -4,7 +4,7 @@ import App from "./App";
 import "./index.css";
 
 createRoot(document.getElementById("root")!).render(
-  <Router base="/dragons-players-list-v2">
+  <HashRouter>
     <App />
-  </Router>
+  </HashRouter>
 );
