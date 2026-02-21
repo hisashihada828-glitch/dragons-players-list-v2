@@ -20,7 +20,8 @@ export default function Home() {
       const matchesSearch =
         searchQuery === '' ||
         player.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        player.number.toString().includes(searchQuery);
+        player.number.includes(searchQuery)
+
 
       const matchesCategory = selectedCategory === null || player.category === selectedCategory;
 
