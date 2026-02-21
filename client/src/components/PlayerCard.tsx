@@ -128,9 +128,9 @@ export default function PlayerCard({ player }: PlayerCardProps) {
 
 function Row({ label, value }: { label: string; value?: string }) {
   return (
-    <div className="py-2">
-      <div className="text-xs text-muted-foreground">{label}</div>
-      <div className="mt-1 text-sm font-medium">{value ?? "-"}</div>
+    <div className="py-1">
+      <div className="text-[11px] leading-4 text-muted-foreground">{label}</div>
+      <div className="text-sm leading-5 font-medium">{value ?? "-"}</div>
     </div>
   );
 }
