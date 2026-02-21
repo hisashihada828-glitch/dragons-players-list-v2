@@ -120,7 +120,7 @@ export const playersData: Player[] = [
 { number: 218, name: '川上 理偉',   position: '内野手', age: 0, draft: '育成', category: 'player', positionCategory: 'infielder' },
 
 // 追加（不足分）: outfielders
-{ number: 00,   name: '尾田 剛樹',   position: '外野手', age: 0, draft: '', category: 'player', positionCategory: 'outfielder' }, // ※ 00表記でも number は 0 が無難
+{ number: 0,   name: '尾田 剛樹',   position: '外野手', age: 0, draft: '', category: 'player', positionCategory: 'outfielder' }, // ※ 00表記でも number は 0 が無難
 { number: 209, name: '福元 悠真',   position: '外野手', age: 0, draft: '育成', category: 'player', positionCategory: 'outfielder' },
 { number: 217, name: '三上 愛介',   position: '外野手', age: 0, draft: '育成', category: 'player', positionCategory: 'outfielder' },
 
