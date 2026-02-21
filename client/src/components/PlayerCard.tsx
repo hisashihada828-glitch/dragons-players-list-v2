@@ -1,11 +1,12 @@
 import { Player } from "@/lib/playersData";
 import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
 
 interface PlayerCardProps {
   player: Player;
@@ -66,80 +67,74 @@ export default function PlayerCard({ player }: PlayerCardProps) {
   const throws = (player as any).throws;
 
   return (
-    <Sheet>
-      {/* 枠全体クリックで詳細 */}
-      <SheetTrigger asChild>
-        <div
-          role="button"
-          tabIndex={0}
-          className={[
-            "w-full cursor-pointer select-none rounded-lg border bg-white/70 px-3 py-2 shadow-sm",
-            "transition hover:bg-white active:scale-[0.99]",
-            "dark:bg-zinc-900/40 dark:hover:bg-zinc-900/60",
-            "focus:outline-none focus:ring-2 focus:ring-ring",
-          ].join(" ")}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              (e.currentTarget as HTMLElement).click();
-            }
-          }}
-        >
-          <div className="flex items-center justify-between gap-3">
-            <div className="flex min-w-0 items-center gap-3">
-              <div className="w-10 shrink-0 text-center text-sm font-semibold tabular-nums">
-                {number || "—"}
-              </div>
+<Dialog>
+  {/* 枠全体クリックで詳細 */}
+  <DialogTrigger asChild>
+    <div
+      role="button"
+      tabIndex={0}
+      className={[
+        "w-full cursor-pointer select-none rounded-lg border bg-white/70 px-3 py-2 shadow-sm",
+        "transition hover:bg-white active:scale-[0.99]",
+        "dark:bg-zinc-900/40 dark:hover:bg-zinc-900/60",
+        "focus:outline-none focus:ring-2 focus:ring-ring",
+      ].join(" ")}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          (e.currentTarget as HTMLElement).click();
+        }
+      }}
+    >
+      <div className="flex items-center justify-between gap-3">
+        <div className="flex min-w-0 items-center gap-3">
+          <div className="w-10 shrink-0 text-center text-sm font-semibold tabular-nums">
+            {number || "—"}
+          </div>
 
-              <div className="min-w-0">
-                <div className="truncate text-sm font-semibold">{name}</div>
-
-                <div className="mt-0.5 flex flex-wrap gap-2">
-                  {position ? (
-                    <span
-                      className={[
-                        "rounded-full px-2 py-0.5 text-[11px] font-medium",
-                        getPositionBadgeColor(position),
-                      ].join(" ")}
-                    >
-                      {getPositionLabel(position)}
-                    </span>
-                  ) : null}
-                </div>
-              </div>
-            </div>
-
-            <div className="shrink-0 text-xs text-muted-foreground">
-              タップで詳細
+          <div className="min-w-0">
+            <div className="truncate text-sm font-semibold">{name}</div>
+            <div className="mt-0.5 flex flex-wrap gap-2">
+              {position ? (
+                <span
+                  className={[
+                    "rounded-full px-2 py-0.5 text-[11px] font-medium",
+                    getPositionBadgeColor(position),
+                  ].join(" ")}
+                >
+                  {getPositionLabel(position)}
+                </span>
+              ) : null}
             </div>
           </div>
         </div>
-      </SheetTrigger>
-<SheetContent
-  side="right"
-  className="w-full sm:max-w-lg overflow-auto
-             sm:mx-auto sm:left-1/2 sm:-translate-x-1/2
-             sm:rounded-2xl sm:shadow-xl"
->
-  <SheetHeader className="border-b pb-3">
-    <SheetTitle className="flex items-center gap-2">
-      {number ? <span className="tabular-nums">{number}</span> : null}
-      <span>{name}</span>
-    </SheetTitle>
-  </SheetHeader>
 
-  <div className="mt-3 divide-y text-sm">
-    <Row label="カテゴリ" value={category ? getCategoryLabel(category) : "-"} />
-    <Row label="ポジション" value={position ? getPositionLabel(position) : "-"} />
-    <Row label="年齢" value={age != null ? `${age}歳` : "-"} />
-    <Row label="ドラフト" value={draft ?? "-"} />
-    <Row
-      label="投打"
-      value={[throws, bats].filter(Boolean).join(" / ") || "-"}
-    />
-  </div>
-</SheetContent>
-    </Sheet>
+        <div className="shrink-0 text-xs text-muted-foreground">タップで詳細</div>
+      </div>
+    </div>
+  </DialogTrigger>
+
+  {/* 中央モーダル */}
+  <DialogContent className="w-[95vw] max-w-lg p-4">
+    <DialogHeader>
+      <DialogTitle className="flex items-center gap-2">
+        {number ? <span className="tabular-nums">{number}</span> : null}
+        <span>{name}</span>
+      </DialogTitle>
+    </DialogHeader>
+
+    <div className="mt-3 divide-y text-sm">
+      <Row label="カテゴリ" value={category ? getCategoryLabel(category) : "-"} />
+      <Row label="ポジション" value={position ? getPositionLabel(position) : "-"} />
+      <Row label="年齢" value={age != null ? `${age}歳` : "-"} />
+      <Row label="ドラフト" value={draft ?? "-"} />
+      <Row
+        label="投打"
+        value={[throws, bats].filter(Boolean).join(" / ") || "-"}
+      />
+    </div>
+  </DialogContent>
+</Dialog>
   );
 }
 
