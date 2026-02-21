@@ -121,7 +121,7 @@ export default function PlayerCard({ player }: PlayerCardProps) {
   className="max-h-[85vh] overflow-auto p-0 bg-transparent border-0 shadow-none"
 >
   {/* 実際に見せたい“カード”を中に作る */}
-  <div className="mx-auto w-full max-w-lg rounded-2xl border bg-background p-4 shadow-lg">
+  <div className="mx-auto w-full max-w-md rounded-2xl border bg-background p-4 shadow-lg">
     <SheetHeader>
       <SheetTitle className="flex items-center gap-2">
         {number ? <span className="tabular-nums">{number}</span> : null}
