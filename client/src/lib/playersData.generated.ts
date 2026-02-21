@@ -98,5 +98,31 @@ export const playersData: Player[] = [
   { number: 98, name: '田島 慎二', position: 'コーチ', age: 0, draft: '', category: 'coach' },
   { number: 99, name: '井上 一樹', position: '監督', age: 55, draft: '', category: 'staff' },
   { number: 101, name: '赤田 龍一郎', position: 'ブルペン捕手', age: 38, draft: '元中日選手', category: 'staff' },
+  // 追加（不足分）: pitchers
+{ number: 28,  name: 'アルベルト・アブレウ', position: '投手', age: 0, draft: '', category: 'player', positionCategory: 'pitcher' },
+{ number: 70,  name: '近藤 廉',             position: '投手', age: 0, draft: '', category: 'player', positionCategory: 'pitcher' },
+{ number: 201, name: '牧野 憲伸',           position: '投手', age: 0, draft: '育成', category: 'player', positionCategory: 'pitcher' },
+{ number: 203, name: '井上 剣也',           position: '投手', age: 0, draft: '育成', category: 'player', positionCategory: 'pitcher' },
+{ number: 204, name: '森 博人',             position: '投手', age: 0, draft: '育成', category: 'player', positionCategory: 'pitcher' },
+{ number: 205, name: '土生 翔太',           position: '投手', age: 0, draft: '育成', category: 'player', positionCategory: 'pitcher' },
+{ number: 211, name: '梅津 晃大',           position: '投手', age: 0, draft: '育成', category: 'player', positionCategory: 'pitcher' },
+{ number: 213, name: '森山 暁生',           position: '投手', age: 0, draft: '育成', category: 'player', positionCategory: 'pitcher' },
+{ number: 219, name: 'ランディ・マルティネス', position: '投手', age: 0, draft: '育成', category: 'player', positionCategory: 'pitcher' },
+
+// 追加（不足分）: catchers
+{ number: 206, name: '山浅 龍之介', position: '捕手', age: 0, draft: '育成', category: 'player', positionCategory: 'catcher' },
+{ number: 215, name: '日渡 騰輝',   position: '捕手', age: 0, draft: '育成', category: 'player', positionCategory: 'catcher' },
+
+// 追加（不足分）: infielders
+{ number: 202, name: '中村 奈一輝', position: '内野手', age: 0, draft: '育成', category: 'player', positionCategory: 'infielder' },
+{ number: 207, name: '津田 啓史',   position: '内野手', age: 0, draft: '育成', category: 'player', positionCategory: 'infielder' },
+{ number: 216, name: '石川 大峨',   position: '内野手', age: 0, draft: '育成', category: 'player', positionCategory: 'infielder' },
+{ number: 218, name: '川上 理偉',   position: '内野手', age: 0, draft: '育成', category: 'player', positionCategory: 'infielder' },
+
+// 追加（不足分）: outfielders
+{ number: 0,   name: '尾田 剛樹',   position: '外野手', age: 0, draft: '', category: 'player', positionCategory: 'outfielder' }, // ※ 00表記でも number は 0 が無難
+{ number: 209, name: '福元 悠真',   position: '外野手', age: 0, draft: '育成', category: 'player', positionCategory: 'outfielder' },
+{ number: 217, name: '三上 愛介',   position: '外野手', age: 0, draft: '育成', category: 'player', positionCategory: 'outfielder' },
+
 ];
 
