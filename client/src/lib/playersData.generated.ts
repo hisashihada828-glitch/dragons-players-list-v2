@@ -1,6 +1,6 @@
 
 export interface Player {
-  number: number;
+  number: string;
   name: string;
   position: string;
   age: number;
