@@ -128,9 +128,9 @@ export default function PlayerCard({ player }: PlayerCardProps) {
 
 function Row({ label, value }: { label: string; value?: string }) {
   return (
-    <div className="flex items-center justify-between gap-4">
-      <span className="text-muted-foreground">{label}</span>
-      <span className="font-medium">{value ?? "-"}</span>
+    <div className="py-2">
+      <div className="text-xs text-muted-foreground">{label}</div>
+      <div className="mt-1 text-sm font-medium">{value ?? "-"}</div>
     </div>
   );
 }
