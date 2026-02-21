@@ -4,7 +4,7 @@ import FilterBar from '@/components/FilterBar';
 //import { playersData, Player } from '@/lib/playersData';
 import { playersData, type Player } from '@/lib/playersData.generated';
 
-/**
+/**　
  * Design Philosophy: モダン・スポーツエレガンス
  * 深紺とゴールドを基調とした高級感のあるデザイン
  * 背番号を大きく表示し、各選手をカード型で表現
