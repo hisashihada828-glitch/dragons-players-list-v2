@@ -102,25 +102,30 @@ export default function PlayerCard({ player }: PlayerCardProps) {
           </SheetTrigger>
 
           <SheetContent side="bottom" className="max-h-[85vh] overflow-auto">
-            <SheetHeader>
-              <SheetTitle className="flex items-center gap-2">
-                {number ? <span className="tabular-nums">{number}</span> : null}
-                <span>{name}</span>
-              </SheetTitle>
-            </SheetHeader>
+              {/* ★これを追加：中央寄せ + 最大幅制限 */}
+     <div className="mx-auto w-full max-w-sm px-1">
+    <SheetHeader>
+      <SheetTitle className="flex items-center gap-2">
+        {number ? <span className="tabular-nums">{number}</span> : null}
+        <span>{name}</span>
+      </SheetTitle>
+    </SheetHeader>
 
-            <div className="mt-4 space-y-3 text-sm">
-              <Row label="カテゴリ" value={category ? getCategoryLabel(category) : "-"} />
-              <Row label="ポジション" value={position ? getPositionLabel(position) : "-"} />
-              <Row label="年齢" value={age != null ? `${age}歳` : "-"} />
-              <Row label="ドラフト" value={draft ?? "-"} />
-              <Row
-                label="投打"
-                value={[throws, bats].filter(Boolean).join(" / ") || "-"}
-              />
-            </div>
-          </SheetContent>
-        </Sheet>
+    {/* ★space-y をやめて区切り線にする */}
+    <div className="mt-3 divide-y text-sm">
+      <Row label="カテゴリ" value={category ? getCategoryLabel(category) : "-"} />
+      <Row label="ポジション" value={position ? getPositionLabel(position) : "-"} />
+      <Row label="年齢" value={age != null ? `${age}歳` : "-"} />
+      <Row label="ドラフト" value={draft ?? "-"} />
+      <Row
+        label="投打"
+        value={[throws, bats].filter(Boolean).join(" / ") || "-"}
+      />
+    </div>
+  </div>
+</SheetContent>
+
+            </Sheet>
       </div>
     </div>
   );
