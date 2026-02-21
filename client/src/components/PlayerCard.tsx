@@ -66,6 +66,75 @@ export default function PlayerCard({ player }: PlayerCardProps) {
   const bats = (player as any).bats;
   const throws = (player as any).throws;
 
+
+import { Player } from "@/lib/playersData";
+import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+
+interface PlayerCardProps {
+  player: Player;
+}
+
+export default function PlayerCard({ player }: PlayerCardProps) {
+  const getPositionBadgeColor = (position: string) => {
+    switch (position) {
+      case "pitcher":
+        return "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100";
+      case "infielder":
+        return "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100";
+      case "outfielder":
+        return "bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-100";
+      case "catcher":
+        return "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-100";
+      default:
+        return "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-100";
+    }
+  };
+
+  const getCategoryLabel = (category: string) => {
+    switch (category) {
+      case "player":
+        return "選手";
+      case "coach":
+        return "コーチ";
+      case "staff":
+        return "スタッフ";
+      default:
+        return "不明";
+    }
+  };
+
+  const getPositionLabel = (pos: string) => {
+    switch (pos) {
+      case "pitcher":
+        return "投手";
+      case "infielder":
+        return "内野手";
+      case "outfielder":
+        return "外野手";
+      case "catcher":
+        return "捕手";
+      default:
+        return pos || "不明";
+    }
+  };
+
+  const number = String((player as any).number ?? "");
+  const name = (player as any).name ?? "";
+  const category = (player as any).category ?? "";
+  const position = (player as any).position ?? "";
+
+  const age = (player as any).age;
+  const draft = (player as any).draft;
+  const bats = (player as any).bats;
+  const throws = (player as any).throws;
+
   return (
     <div className="rounded-lg border bg-white/70 px-3 py-2 shadow-sm dark:bg-zinc-900/40">
       <div className="flex items-center justify-between gap-3">
