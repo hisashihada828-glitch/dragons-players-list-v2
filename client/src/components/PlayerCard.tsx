@@ -115,10 +115,11 @@ export default function PlayerCard({ player }: PlayerCardProps) {
           </div>
         </div>
       </SheetTrigger>
-
 <SheetContent
   side="right"
-  className="w-full sm:max-w-lg overflow-auto"
+  className="w-full sm:max-w-lg overflow-auto
+             sm:mx-auto sm:left-1/2 sm:-translate-x-1/2
+             sm:rounded-2xl sm:shadow-xl"
 >
   <SheetHeader className="border-b pb-3">
     <SheetTitle className="flex items-center gap-2">
