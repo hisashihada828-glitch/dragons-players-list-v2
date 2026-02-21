@@ -117,28 +117,25 @@ export default function PlayerCard({ player }: PlayerCardProps) {
       </SheetTrigger>
 
 <SheetContent
-  side="bottom"
-  className="max-h-[85vh] overflow-auto p-0 bg-transparent border-0 shadow-none"
+  side="right"
+  className="w-full sm:max-w-lg overflow-auto"
 >
-  {/* 実際に見せたい“カード”を中に作る */}
-  <div className="mx-auto w-full max-w-md rounded-2xl border bg-background p-4 shadow-lg">
-    <SheetHeader>
-      <SheetTitle className="flex items-center gap-2">
-        {number ? <span className="tabular-nums">{number}</span> : null}
-        <span>{name}</span>
-      </SheetTitle>
-    </SheetHeader>
+  <SheetHeader className="border-b pb-3">
+    <SheetTitle className="flex items-center gap-2">
+      {number ? <span className="tabular-nums">{number}</span> : null}
+      <span>{name}</span>
+    </SheetTitle>
+  </SheetHeader>
 
-    <div className="mt-3 divide-y text-sm">
-      <Row label="カテゴリ" value={category ? getCategoryLabel(category) : "-"} />
-      <Row label="ポジション" value={position ? getPositionLabel(position) : "-"} />
-      <Row label="年齢" value={age != null ? `${age}歳` : "-"} />
-      <Row label="ドラフト" value={draft ?? "-"} />
-      <Row
-        label="投打"
-        value={[throws, bats].filter(Boolean).join(" / ") || "-"}
-      />
-    </div>
+  <div className="mt-3 divide-y text-sm">
+    <Row label="カテゴリ" value={category ? getCategoryLabel(category) : "-"} />
+    <Row label="ポジション" value={position ? getPositionLabel(position) : "-"} />
+    <Row label="年齢" value={age != null ? `${age}歳` : "-"} />
+    <Row label="ドラフト" value={draft ?? "-"} />
+    <Row
+      label="投打"
+      value={[throws, bats].filter(Boolean).join(" / ") || "-"}
+    />
   </div>
 </SheetContent>
     </Sheet>
