@@ -13,8 +13,8 @@ interface PlayerCardProps {
 }
 
 export default function PlayerCard({ player }: PlayerCardProps) {
-  const getPositionBadgeColor = (category: string) => {
-    switch (category) {
+  const getPositionBadgeColor = (position: string) => {
+    switch (position) {
       case "pitcher":
         return "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100";
       case "infielder":
@@ -56,51 +56,44 @@ export default function PlayerCard({ player }: PlayerCardProps) {
     }
   };
 
-  // “一覧カードに残す”最小情報
   const number = String((player as any).number ?? "");
   const name = (player as any).name ?? "";
-  const category = (player as any).category ?? ""; // player/coach/staff の想定
-  const position = (player as any).position ?? ""; // pitcher/infielder/outfielder/catcher の想定
+  const category = (player as any).category ?? "";
+  const position = (player as any).position ?? "";
 
-  // 詳細側（存在しない項目でも落ちないように）
   const age = (player as any).age;
   const draft = (player as any).draft;
   const bats = (player as any).bats;
   const throws = (player as any).throws;
 
   return (
-    <div className="rounded-xl border bg-white/70 p-3 shadow-sm dark:bg-zinc-900/40">
-      <div className="flex items-start justify-between gap-3">
-        {/* 左：最小表示 */}
-        <div className="min-w-0">
-          <div className="flex items-baseline gap-2">
-            {number ? (
-              <span className="text-lg font-semibold tabular-nums">{number}</span>
-            ) : null}
-            <h3 className="truncate text-base font-semibold">{name}</h3>
+    <div className="rounded-lg border bg-white/70 px-3 py-2 shadow-sm dark:bg-zinc-900/40">
+      <div className="flex items-center justify-between gap-3">
+        {/* 左：コンパクト1行 */}
+        <div className="flex min-w-0 items-center gap-3">
+          <div className="w-10 shrink-0 text-center text-sm font-semibold tabular-nums">
+            {number || "—"}
           </div>
 
-          <div className="mt-1 flex flex-wrap gap-2">
-            {category ? (
-              <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-xs text-zinc-700 dark:bg-zinc-800 dark:text-zinc-200">
-                {getCategoryLabel(category)}
-              </span>
-            ) : null}
+          <div className="min-w-0">
+            <div className="truncate text-sm font-semibold">{name}</div>
 
-            {position ? (
-              <span
-                className={[
-                  "rounded-full px-2 py-0.5 text-xs font-medium",
-                  getPositionBadgeColor(position),
-                ].join(" ")}
-              >
-                {getPositionLabel(position)}
-              </span>
-            ) : null}
+            <div className="mt-0.5 flex flex-wrap gap-2">
+              {position ? (
+                <span
+                  className={[
+                    "rounded-full px-2 py-0.5 text-[11px] font-medium",
+                    getPositionBadgeColor(position),
+                  ].join(" ")}
+                >
+                  {getPositionLabel(position)}
+                </span>
+              ) : null}
+            </div>
           </div>
         </div>
 
-        {/* 右：詳細ボタン → 下からSheet */}
+        {/* 右：詳細ボタン */}
         <Sheet>
           <SheetTrigger asChild>
             <Button size="sm" variant="outline">
@@ -125,12 +118,6 @@ export default function PlayerCard({ player }: PlayerCardProps) {
                 label="投打"
                 value={[throws, bats].filter(Boolean).join(" / ") || "-"}
               />
-
-              {/* ここに、今までカードに出していた詳細項目を追加していく */}
-              {/* 例）
-              <Row label="出身" value={(player as any).from ?? "-"} />
-              <Row label="身長体重" value={(player as any).body ?? "-"} />
-              */}
             </div>
           </SheetContent>
         </Sheet>
