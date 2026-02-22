@@ -31,7 +31,7 @@ export interface Player {
 export const playersData: Player[] = [
   // Main players
   { teamId: "dragons", number: "0", name: '辻本 倫太郎', position: '内野手', age: 25, draft: "'23 3位", category: 'player', positionCategory: 'infielder' },
-  { teamId: "dragons", number: "1", name: '岡林 勇希', position: '外野手', age: 24, draft: "'19 5位", category: 'player', positionCategory: 'outfielder' },
+  { teamId: "dragons", number: "1", name: 'テスト岡林 勇希', position: '外野手', age: 24, draft: "'19 5位", category: 'player', positionCategory: 'outfielder' },
   { teamId: "dragons", number: "2", name: '田中 幹也', position: '内野手', age: 26, draft: "'22 6位", category: 'player', positionCategory: 'infielder' },
   { teamId: "dragons", number: "3", name: '高橋 周平', position: '内野手', age: 32, draft: "'11 1位", category: 'player', positionCategory: 'infielder' },
   { teamId: "dragons", number: "4", name: 'O.カリステ', position: '内野手', age: 34, draft: '外国人', category: 'player', positionCategory: 'infielder' },
