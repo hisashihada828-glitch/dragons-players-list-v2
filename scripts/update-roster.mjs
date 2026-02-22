@@ -183,7 +183,7 @@ async function main() {
 
   const merged = mergeRoster(mainPlayers, devPlayers);
 
-  const outPath = path.join(ROOT, "client", "src", "lib", "playersData.generated.ts");
+  const outPath = path.join(ROOT, "client", "src", "lib", "playersData.ts");
   fs.writeFileSync(outPath, toTs(merged), "utf-8");
 
   console.log(`Generated: ${outPath}`);
