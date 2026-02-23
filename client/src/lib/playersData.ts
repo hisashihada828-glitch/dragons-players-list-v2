@@ -9,5 +9,6 @@ import { tigersPlayers } from "./players/tigers";
 export const playersData: Player[] = [
   ...dragonsPlayers,
   ...baystarsPlayers,
+  ...tigersPlayers,
 
 ];
