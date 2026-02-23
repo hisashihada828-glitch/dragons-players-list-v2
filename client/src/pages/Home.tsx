@@ -1,7 +1,8 @@
 import { useState, useMemo } from 'react';
 import PlayerCard from '@/components/PlayerCard';
 import FilterBar from '@/components/FilterBar';
-import { playersData, TEAMS, type TeamId } from '@/lib/playersData';
+import { playersData, type TeamId } from '@/lib/playersData';
+import { TEAMS } from '@/lib/teams';
 
 /**　
  * Design Philosophy: モダン・スポーツエレガンス
