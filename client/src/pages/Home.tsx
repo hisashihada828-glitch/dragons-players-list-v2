@@ -20,8 +20,8 @@ export default function Home() {
       const matchesSearch =
         searchQuery === '' ||
         player.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        player.number.includes(searchQuery);
-
+        String(player.number).includes(searchQuery);
+        
       const matchesTeam = teamFilter === "all" || player.teamId === teamFilter;
 
       const matchesCategory = selectedCategory === null || player.category === selectedCategory;
