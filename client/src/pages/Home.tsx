@@ -119,17 +119,15 @@ export default function Home() {
 
               {filteredPlayers.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max">
-                  {filteredPlayers.map((player, index) => (
-                    <div
-                      key={`${player.number}-${player.name}`}
-                      style={{
-                        animation: `fadeInUp 0.5s ease-out ${index * 0.05}s both`,
-                      }}
-                    >
-                      <PlayerCard player={player} />
-                    </div>
-                  ))}
-                </div>
+                  {filteredPlayers.map((player) => (
+                      <div
+                          key={`${player.number}-${player.name}`}
+                              style={{ animation: `fadeInUp 0.5s ease-out 0s both` }}
+                                >
+                                      <PlayerCard player={player} />
+                                        </div>
+                                        ))}
+                      </div>
               ) : (
                 <div className="bg-card text-card-foreground rounded-lg p-12 text-center shadow-md">
                   <p className="text-muted-foreground text-lg">
