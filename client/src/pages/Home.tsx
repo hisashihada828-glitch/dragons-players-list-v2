@@ -1,8 +1,7 @@
 import { useState, useMemo } from 'react';
 import PlayerCard from '@/components/PlayerCard';
 import FilterBar from '@/components/FilterBar';
-//import { playersData, Player } from '@/lib/playersData';
-import { playersData, type Player } from '@/lib/playersData';
+import { playersData, type Player, type TeamId } from '@/lib/playersData';
 
 /**　
  * Design Philosophy: モダン・スポーツエレガンス
@@ -14,14 +13,16 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedPosition, setSelectedPosition] = useState<string | null>(null);
+  const [teamFilter, setTeamFilter] = useState<"all" | TeamId>("all");
 
   const filteredPlayers = useMemo(() => {
     return playersData.filter((player) => {
       const matchesSearch =
         searchQuery === '' ||
         player.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        player.number.includes(searchQuery)
+        player.number.includes(searchQuery);
 
+      const matchesTeam = teamFilter === "all" || player.teamId === teamFilter;
 
       const matchesCategory = selectedCategory === null || player.category === selectedCategory;
 
@@ -32,9 +33,9 @@ export default function Home() {
         (selectedPosition === 'outfielder' && player.positionCategory === 'outfielder') ||
         (selectedPosition === 'catcher' && player.positionCategory === 'catcher');
 
-      return matchesSearch && matchesCategory && matchesPosition;
+      return matchesSearch && matchesTeam && matchesCategory && matchesPosition;
     });
-  }, [searchQuery, selectedCategory, selectedPosition]);
+  }, [searchQuery, teamFilter, selectedCategory, selectedPosition]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -61,6 +62,43 @@ export default function Home() {
             {/* Sidebar Filter */}
             <div className="lg:col-span-1">
               <div className="sticky top-4">
+                {/* Team Filter */}
+                <div className="mb-4 rounded-lg border border-border bg-card p-3 shadow-sm">
+                  <div className="mb-2 text-sm font-semibold text-foreground">球団</div>
+
+                  <div className="flex flex-wrap gap-2">
+                    <button
+                      className={`rounded px-3 py-1 text-sm ${
+                        teamFilter === "all" ? "bg-foreground text-background" : "bg-muted text-foreground"
+                      }`}
+                      onClick={() => setTeamFilter("all")}
+                      type="button"
+                    >
+                      All
+                    </button>
+
+                    <button
+                      className={`rounded px-3 py-1 text-sm ${
+                        teamFilter === "dragons" ? "bg-foreground text-background" : "bg-muted text-foreground"
+                      }`}
+                      onClick={() => setTeamFilter("dragons")}
+                      type="button"
+                    >
+                      Dragons
+                    </button>
+
+                    <button
+                      className={`rounded px-3 py-1 text-sm ${
+                        teamFilter === "baystars" ? "bg-foreground text-background" : "bg-muted text-foreground"
+                      }`}
+                      onClick={() => setTeamFilter("baystars")}
+                      type="button"
+                    >
+                      BayStars
+                    </button>
+                  </div>
+                </div>
+
                 <FilterBar
                   searchQuery={searchQuery}
                   onSearchChange={setSearchQuery}
