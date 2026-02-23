@@ -67,37 +67,35 @@ export default function Home() {
                   <div className="mb-2 text-sm font-semibold text-foreground">球団</div>
 
                   <div className="flex flex-wrap gap-2">
-                    <button
-                      className={`rounded px-3 py-1 text-sm ${
-                        teamFilter === "all" ? "bg-foreground text-background" : "bg-muted text-foreground"
-                      }`}
-                      onClick={() => setTeamFilter("all")}
-                      type="button"
-                    >
-                      All
-                    </button>
+  {/* All */}
+  <button
+    className={`rounded px-3 py-1 text-sm ${
+      teamFilter === "all"
+        ? "bg-foreground text-background"
+        : "bg-muted text-foreground"
+    }`}
+    onClick={() => setTeamFilter("all")}
+    type="button"
+  >
+    All
+  </button>
 
-                    <button
-                      className={`rounded px-3 py-1 text-sm ${
-                        teamFilter === "dragons" ? "bg-foreground text-background" : "bg-muted text-foreground"
-                      }`}
-                      onClick={() => setTeamFilter("dragons")}
-                      type="button"
-                    >
-                      Dragons
-                    </button>
-
-                    <button
-                      className={`rounded px-3 py-1 text-sm ${
-                        teamFilter === "baystars" ? "bg-foreground text-background" : "bg-muted text-foreground"
-                      }`}
-                      onClick={() => setTeamFilter("baystars")}
-                      type="button"
-                    >
-                      BayStars
-                    </button>
-                  </div>
-                </div>
+  {/* Teams auto-generated */}
+  {Object.entries(TEAMS).map(([teamId, teamName]) => (
+    <button
+      key={teamId}
+      className={`rounded px-3 py-1 text-sm ${
+        teamFilter === teamId
+          ? "bg-foreground text-background"
+          : "bg-muted text-foreground"
+      }`}
+      onClick={() => setTeamFilter(teamId as TeamId)}
+      type="button"
+    >
+      {teamName}
+    </button>
+  ))}
+</div>                </div>
 
                 <FilterBar
                   searchQuery={searchQuery}
