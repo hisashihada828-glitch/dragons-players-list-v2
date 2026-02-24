@@ -8,7 +8,7 @@ export const fightersPlayers: Player[] = [
     position: "外野手",
     age: 24,
     draft: "'18 4位",
-    teamid: "fighters",
+    teamId: "fighters",
   },
   {
     number: "17",
@@ -16,6 +16,6 @@ export const fightersPlayers: Player[] = [
     position: "投手",
     age: 26,
     draft: "'20 1位",
-    teamid: "fighters",
+    teamId: "fighters",
   },
 ];

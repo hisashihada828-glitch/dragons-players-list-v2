@@ -16,6 +16,6 @@ export const marinesPlayers: Player[] = [
     position: "外野手",
     age: 23,
     draft: "'18 1位",
-    teamid: "marines",
+    teamId: "marines",
   },
 ];

@@ -8,7 +8,7 @@ export const swallowsPlayers: Player[] = [
     position: "内野手",
     age: 24,
     draft: "'17 1位",
-    teamid: "swallows",
+    teamId: "swallows",
   },
   {
     number: "1",
@@ -16,6 +16,6 @@ export const swallowsPlayers: Player[] = [
     position: "内野手",
     age: 32,
     draft: "'10 1位",
-    teamid: "swallows",
+    teamId: "swallows",
   },
 ];
